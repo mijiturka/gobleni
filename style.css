@@ -68,7 +68,49 @@ header {
 }
 
 
-#social {
+a:link{color:#a13b71;text-decoration:underline;font-weight:600}
+body {
+    font-family: "Open Sans";
+    font-size: normal;
+    /*font-family: "Verdana";*/
+}
+h2 {
+    color:#a13b71;
+    font-weight: 700;
+}
+
+.goblen {
+    padding: 2em;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);  
+}
+.goblen.image {
+    padding: 2em;
+    float: left;
+}
+.goblen .details {
+    font-size: large;
+    float: left;
+}
+
+
+.footer-links {
+    position: absolute;
+    left: 50%; bottom: 0;
+    transform: translate(-50%, 0%);
+
+    text-align: center;
+
+    list-style: outside none none;
+}
+
+.footer-links li {
+    float: left;
+    padding: 0 1em 0 1em;
+}
+
+.social {
     position: absolute;
     bottom: 10px;
     right: 10px;
