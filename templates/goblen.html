@@ -4,6 +4,8 @@
     <link rel = "stylesheet" href="style.css" type="text/css" >
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>{{ name_display }} – Гоблен – {{ category_display }} – Гоблени Румяна</title>
 </head>
 
 <body>
@@ -21,19 +23,19 @@
 <div class="goblen">
 
     <div class="image">
-        <img src="gallery/paintings/560.jpg" />
+        <img src="/static/gallery/paintings/{{ number }}.jpg" />
     </div>
 
     <div class="details">
-        <h2>Игра на кегли</h2>
+        <h2>{{ name_display }}</h2>
 
         <p>
-        Гоблен номер: 560<br />
-        56 цвята<br /><br />
+        Гоблен номер: {{ number }}<br />
+        {{ colours }} цвята<br /><br />
 
-        Модел: 1 към 1<br />
-        Размер: 69х45 см.<br />
-        Цена: 109.50 лв.
+        Модел: {{ model }}<br />
+        Размер: {{ size_w }}х{{ size_h }} см.<br />
+        Цена: {{ price }} лв.
     </p>
 
     </div>
