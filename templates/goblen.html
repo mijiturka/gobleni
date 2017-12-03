@@ -2,7 +2,7 @@
 
 <head>
     <link rel = "stylesheet" href="style.css" type="text/css" >
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600&subset=latin,cyrillic' rel='stylesheet' type='text/css'> -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <title>{{ name_display }} – Гоблен – {{ category_display }} – Гоблени Румяна</title>
@@ -22,21 +22,49 @@
 
 <div class="goblen">
 
+    <h1>{{ name_display }}</h1>
+
     <div class="image">
-        <img src="/static/gallery/paintings/{{ number }}.jpg" />
+        <img src="/static/gallery/{{ number }}.jpg" />
     </div>
 
     <div class="details">
-        <h2>{{ name_display }}</h2>
 
-        <p>
-        Гоблен номер: {{ number }}<br />
+      {% if hudojnik is not none: %}
+        <h2>от <a href="/hudojnici/{{hudojnik}}"> {{ hudojnik }} </a></h2>
+      {% endif %}
+
+      <p>
+        <!-- number necessary? think about the ordering of these, and any <h>s -->
+        <!-- Гоблен номер: {{ number }}<br /> -->
         {{ colours }} цвята<br /><br />
 
         Модел: {{ model }}<br />
         Размер: {{ size_w }}х{{ size_h }} см.<br />
         Цена: {{ price }} лв.
-    </p>
+
+        {% if model2 is not none: %}
+          Модел: {{ model2 }}<br />
+          Размер: {{ size2_w }}х{{ size2_h }} см.<br />
+          Цена: {{ price2 }} лв.
+        {% endif %}
+      </p>
+
+      <p>
+        Конци: DMC и Anchor<br />
+        <a href="#">Какво включва комплекта?</a><br />
+        <a href="#">Как става заплащането и доставката?</a><br />
+      </p>
+
+      {% if subtitle is not none: %}
+        <h3>{{ subtitle}}</h3>
+      {% endif %}
+      {% if description is not none: %}
+        <p>{{ description }}</p>
+      {% endif %}
+      {% if hudojnik is not none: %}
+        <a href="/hudojnici/{{hudojnik}}">Виж още за художника</a>
+      {% endif %}
 
     </div>
 </div>

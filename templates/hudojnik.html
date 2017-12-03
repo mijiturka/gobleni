@@ -1,0 +1,129 @@
+<html>
+
+<head>
+    <link rel = "stylesheet" href="style.css" type="text/css" >
+    <!-- TODO This slows down the entire page forever if it can't load. Think of a better way -->
+    <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600&subset=latin,cyrillic' rel='stylesheet' type='text/css'> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <style type="text/css">
+      .gobleni {
+        margin: auto;
+        width: 50%;
+      }
+      .goblen {
+        float: left;
+        margin: 20pt;
+      }
+    </style>
+
+    <title>{{ artist }} – Гоблени по картини на художника – Гоблени Румяна</title>
+</head>
+
+<body>
+
+<header>
+    <div id="logo2"> <a href="index.html"> <img src="images/logo8.svg" width="34%"> </a> </div>
+
+    <form class="search-form" action="/search" method="get">
+        <input id="site-search" class="search-field" name="q" placeholder="Търсене" value="" type="text">
+        <button class="search-submit" type="submit">Search</button>
+    </form>
+</header>
+
+
+<div class="hudojnik">
+
+    <h1>{{ artist }}</h1>
+
+    <!-- <div class="image">
+      <img src="/static/hudojnici/{{ artist }}.jpg" />
+    </div> -->
+
+    <div class="description">
+      {% if description is not none: %}
+
+      <p>{{ description }}</p>
+
+      <!-- small Wiki logo? -->
+      <a href="{{ wiki_link }}">Научи още в Уикипедия</a>
+
+      {% endif %}
+    </div>
+
+    <div class="gobleni">
+
+      <h2>Гоблени по картини на {{ artist }}</h2>
+
+      {% for goblen in gobleni %}
+
+      <div class="goblen" align="center">
+
+        <h3>{{ goblen['name'] }}</h3>
+
+        <!-- <div class="image"> -->
+          <!-- TODO it's better if this includes the name -->
+          <a href="/goblen/{{ goblen['cat'] }}/{{ goblen['id'] }}">
+            <img src="/static/thumbs/{{ goblen['id'] }}t.jpg" />
+          </a>
+        <!-- </div> -->
+
+        <!-- <div class="details"> -->
+          <p>
+            {{ goblen['colours'] }} цвята<br />
+
+            {% if goblen['model2'] is not none: %}
+              <!-- Extra space for when there's multiple models -->
+              <br />
+            {% endif %}
+
+            {{ goblen['model'] }}<br />
+            <!-- Размер: {{ goblen['size_w'] }}х{{ goblen['size_h'] }} см.<br /> -->
+            {{ goblen['price']/100 }} лв.
+
+            {% if goblen['model2'] is not none: %}
+              <br />
+              {{ model2 }}<br />
+              <!-- Размер: {{ size2_w }}х{{ size2_h }} см.<br /> -->
+              {{ price2/100 }} лв.
+            {% endif %}
+          </p>
+        <!-- </div> -->
+
+      </div>
+
+      {% endfor %}
+
+    </div>
+
+    <div style="clear: both;">
+      Изпуснали ли сме някоя страхотна картина на {{ artist }}? Можем да Ви я направим <a href="#">по поръчка</a>.
+    </div>
+</div>
+
+
+<footer>
+    <ul class="footer-links">
+
+        <li>Гоблени Румяна</li>
+        <li>goblenirumiana.com</li>
+        <li><img src="images/favicon.png" width="16px" height="16px" /></li>
+
+        <li><a href="#" data-ga-click="Footer, go to terms, text:terms">Магазин</a></li>
+        <li><a href="#" data-ga-click="Footer, go to privacy, text:privacy">Контакти</a></li>
+        <li><a href="#" data-ga-click="Footer, go to security, text:security">Въпроси</a></li>
+    </ul>
+</footer>
+
+<div class="social">
+
+    <img src="images/Android-icon72.png" />
+    <img src="images/Google-Plus-icon72.png" />
+    <img src="images/Twitter-icon72.png" />
+    <img src="images/Facebook-icon72.png" />
+
+</div>
+
+</body>
+
+</html>
