@@ -1,3 +1,8 @@
+@font-face {
+    font-family: BitScript-bg;
+    src: local(BitScript-bg), url('font.ttf') format('opentype');
+}
+
 body {
     margin: 0px;
     width: 99%;
@@ -6,11 +11,22 @@ body {
 
 header {
     width: 100%;
-    height: 55px;
+    /* height: 55px; */
+    height: 12.5%;
 
     padding: 7px;
 
     background-color: #a13b71;
+    /* background-color:  #3ba16a; */
+
+    /* background-color: #e1ccd1; */
+
+    /* border: 5px solid #a13b71;
+    border-left: 0px;
+    border-right: 0px;
+    /* border-radius: 20px; */
+    /* border-color: rgba(255, 255, 255, 0.2); */
+    /* background-color: #e1ccd1; */
 }
 
 
@@ -21,32 +37,37 @@ header {
     width: 218.56px;
     background: white;
     background-image: url("images/logo7.svg");
-    background-size: 100% 100%; 
+    background-size: 100% 100%;
 }
 
 #logo2 {
     position: absolute;
-    left: 0px;
+    top: 20px;
+    left: 30px;
 }
 
 
 .search-form {
     position: absolute;
-    left: 35%;
+    /* left: 35%; */
+    left: 65%;
+    top: 4%;
     height: 36px;
     width: 30%;
     padding: 7px;
-    
-    border: 2px solid #CCC;
+
+    border: 2px solid #a13b71;
     border-radius: 20px;
-    border-color: rgba(255, 255, 255, 0.2);
+    /* border-color: rgba(72, 26, 50, 1); */
+    border-color: rgba(255, 255, 255, 0.5);
 }
-.search-field { 
+.search-field {
     height: 36px;
     padding-left: 10px;
-     
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.5);
+
+    /* font-size: 18px; */
+    font-size: 20pt;
+    color: rgba(255, 255, 255, 1);
 
     border: none;
     background: transparent;
@@ -55,7 +76,7 @@ header {
 .search-submit {
     position: absolute;
     top: 50%; left: 100%;
-    transform: translate(-50%,-50%);    
+    transform: translate(-50%,-50%);
 
     height: 64px;
     width: 64px;
@@ -83,7 +104,7 @@ h2 {
     padding: 2em;
     position: absolute;
     left: 50%;
-    transform: translate(-50%, 0%);  
+    transform: translate(-50%, 0%);
 }
 .goblen.image {
     padding: 2em;

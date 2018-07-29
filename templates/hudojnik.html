@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <link rel = "stylesheet" href="style.css" type="text/css" >
+    <link rel = "stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css" >
     <!-- TODO This slows down the entire page forever if it can't load. Think of a better way -->
     <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600&subset=latin,cyrillic' rel='stylesheet' type='text/css'> -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -23,7 +23,7 @@
 <body>
 
 <header>
-    <div id="logo2"> <a href="index.html"> <img src="images/logo8.svg" width="34%"> </a> </div>
+    <div id="logo2"> <a href="index.html"> <object data="{{ url_for('static', filename='images/logo8.svg') }}" type="image/svg+xml" width="50%"></object> </a> </div>
 
     <form class="search-form" action="/search" method="get">
         <input id="site-search" class="search-field" name="q" placeholder="Търсене" value="" type="text">
