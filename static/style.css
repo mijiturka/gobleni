@@ -13,34 +13,11 @@ header {
     width: 100%;
     /* height: 55px; */
     height: 12.5%;
-
     padding: 7px;
-
     background-color: #a13b71;
-    /* background-color:  #3ba16a; */
-
-    /* background-color: #e1ccd1; */
-
-    /* border: 5px solid #a13b71;
-    border-left: 0px;
-    border-right: 0px;
-    /* border-radius: 20px; */
-    /* border-color: rgba(255, 255, 255, 0.2); */
-    /* background-color: #e1ccd1; */
 }
-
 
 #logo {
-    position: absolute;
-    top: 25px;
-    height: 55px;
-    width: 218.56px;
-    background: white;
-    background-image: url("images/logo7.svg");
-    background-size: 100% 100%;
-}
-
-#logo2 {
     position: absolute;
     top: 20px;
     left: 30px;
